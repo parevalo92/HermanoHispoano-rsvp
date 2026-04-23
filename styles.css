@@ -166,10 +166,7 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at top left, rgba(28, 140, 255, 0.28), transparent 35%),
-    radial-gradient(circle at 85% 20%, rgba(57, 217, 138, 0.16), transparent 25%),
-    linear-gradient(180deg, #081120 0%, #0a1630 100%);
+  background: linear-gradient(180deg, #081120 0%, #0a1630 100%);
   color: white;
   padding: 70px 0 90px;
 }
@@ -192,6 +189,70 @@ a {
   grid-template-columns: 1.15fr 0.85fr;
   gap: 36px;
   align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* base degradado profundo */
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgba(28,140,255,0.35), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(57,217,138,0.18), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(28,140,255,0.12), transparent 40%),
+    linear-gradient(180deg, #081120 0%, #0a1630 100%);
+
+  filter: blur(0px);
+}
+
+/* capa de luz suave tipo glow */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+
+  background:
+    radial-gradient(circle at 30% 40%, rgba(56,189,248,0.12), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(34,197,94,0.10), transparent 40%);
+
+  filter: blur(60px);
+  opacity: 0.8;
+  animation: heroBackgroundMove 18s ease-in-out infinite;
+}
+
+/* animación sutil */
+@keyframes heroBackgroundMove {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-20px, 15px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 15% 20%, rgba(28,140,255,0.35), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(57,217,138,0.18), transparent 30%),
+    linear-gradient(180deg, #081120 0%, #0a1630 100%),
+    url("https://www.transparenttextures.com/patterns/noise.png");
+
+  opacity: 0.95;
 }
 
 .eyebrow {
@@ -866,5 +927,126 @@ a {
   .btn-secondary,
   .btn-primary {
     width: 100%;
+  }
+}
+
+/* HERO  */ 
+.refined-title {
+  margin: 0 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 1.03;
+  letter-spacing: -0.045em;
+  max-width: 900px;
+}
+
+.refined-title .title-line {
+  color: #ffffff;
+  font-weight: 900;
+  animation: titleFloat 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.refined-title .title-highlight {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #c7f0ff 12%,
+    #7dd3fc 28%,
+    #38bdf8 45%,
+    #22c55e 62%,
+    #86efac 78%,
+    #e0f2fe 90%,
+    #ffffff 100%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.08));
+  animation:
+    gradientShift 7s ease-in-out infinite,
+    titleGlow 4s ease-in-out infinite,
+    titleFloat 5s ease-in-out infinite;
+  will-change: background-position, filter, transform;
+}
+
+/* halo suave detrás del texto */
+.refined-title .title-highlight::before {
+  content: "";
+  position: absolute;
+  inset: 8% -2%;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(56, 189, 248, 0.16) 0%,
+    rgba(34, 197, 94, 0.10) 35%,
+    rgba(56, 189, 248, 0.00) 75%
+  );
+  filter: blur(18px);
+  opacity: 0.8;
+  animation: auraPulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 8px rgba(56, 189, 248, 0.10))
+      drop-shadow(0 0 18px rgba(34, 197, 94, 0.06));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 14px rgba(56, 189, 248, 0.18))
+      drop-shadow(0 0 26px rgba(34, 197, 94, 0.10));
+  }
+}
+
+@keyframes auraPulse {
+  0%, 100% {
+    transform: scale(0.98);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .refined-title {
+    gap: 8px;
+    letter-spacing: -0.04em;
+  }
+
+  .refined-title .title-highlight::before {
+    inset: 10% -4%;
+    filter: blur(14px);
   }
 }

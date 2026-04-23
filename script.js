@@ -75,3 +75,29 @@ window.addEventListener("scroll", () => {
     navbar.style.boxShadow = "none";
   }
 });
+
+// ===============================
+// EFECTO HERO
+// ===============================
+
+const animatedTitle = document.getElementById("animatedTitle");
+
+if (animatedTitle) {
+  const text = animatedTitle.textContent.trim();
+  animatedTitle.textContent = "";
+
+  [...text].forEach((char, index) => {
+    const span = document.createElement("span");
+
+    if (char === " ") {
+      span.classList.add("space");
+      span.innerHTML = "&nbsp;";
+    } else {
+      span.classList.add("char");
+      span.textContent = char;
+      span.style.animationDelay = `${index * 0.06}s`;
+    }
+
+    animatedTitle.appendChild(span);
+  });
+}
