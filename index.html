@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HermanoHispano | Capacitación Migratoria</title>
+  <meta
+    name="description"
+    content="Capacitación gratuita sobre migración, procesos, preparación de documentos y orientación confiable para la comunidad hispana."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <p>Capacitación virtual gratuita | Cupos limitados | Atención en español</p>
+      <a href="#registro" class="topbar-link">Reserva tu lugar</a>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">HH</span>
+        <span>HermanoHispano</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#temas">Temas</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#ponentes">Ponentes</a>
+      </div>
+
+      <a href="#registro" class="btn btn-outline">Inscribirme</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">HermanoHispano presenta</span>
+          <h1>
+            Capacitación Intensiva sobre
+            <span>Migración y Preparación de Casos</span>
+          </h1>
+          <p class="hero-text">
+            Aprende a organizar documentos, entender procesos migratorios,
+            prepararte para entrevistas y evitar errores comunes con una guía clara,
+            humana y práctica para la comunidad hispana.
+          </p>
+
+          <div class="hero-meta">
+            <div class="meta-pill">Evento Virtual</div>
+            <div class="meta-pill">3 días de capacitación</div>
+            <div class="meta-pill">100% en español</div>
+          </div>
+
+          <div class="countdown-box">
+            <p class="countdown-label">La capacitación inicia en:</p>
+            <div class="countdown" id="countdown">
+              <div class="time-box">
+                <span id="days">00</span>
+                <small>Días</small>
+              </div>
+              <div class="time-box">
+                <span id="hours">00</span>
+                <small>Horas</small>
+              </div>
+              <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Minutos</small>
+              </div>
+              <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Segundos</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#registro" class="btn btn-primary">Reservar mi lugar</a>
+            <a href="#temas" class="btn btn-secondary">Ver contenido</a>
+          </div>
+
+          <div class="hero-trust">
+            <span>✅ Orientación clara</span>
+            <span>✅ Enfoque comunitario</span>
+            <span>✅ Material práctico</span>
+          </div>
+        </div>
+
+        <div class="hero-card" id="registro">
+          <div class="form-card">
+            <p class="form-tag">Registro gratuito</p>
+            <h2>Separa tu cupo hoy</h2>
+            <p class="form-subtext">
+              Recibe acceso al evento, recordatorios y recursos descargables de apoyo.
+            </p>
+
+            <form id="registroForm" class="registration-form">
+              <div class="input-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+              </div>
+
+              <div class="input-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required />
+              </div>
+
+              <div class="input-group">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+1 000 000 0000" required />
+              </div>
+
+              <div class="input-group">
+                <label for="interes">Tema de mayor interés</label>
+                <select id="interes" name="interes" required>
+                  <option value="">Selecciona una opción</option>
+                  <option value="asilo">Asilo</option>
+                  <option value="residencia">Residencia</option>
+                  <option value="permisos">Permisos de trabajo</option>
+                  <option value="entrevista">Entrevistas migratorias</option>
+                  <option value="documentos">Preparación de documentos</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                Quiero registrarme gratis
+              </button>
+
+              <p class="form-note">
+                Al registrarte, aceptas recibir información del evento y recursos
+                educativos de HermanoHispano.
+              </p>
+
+              <div id="formMessage" class="form-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact">
+      <div class="container impact-grid">
+        <div class="impact-card">
+          <h3>Muchos migrantes no fallan por falta de esfuerzo...</h3>
+          <p>
+            Fallan por falta de información clara, por documentos incompletos
+            o por no entender el proceso completo.
+          </p>
+        </div>
+
+        <div class="impact-card highlight">
+          <h3>Con la orientación correcta puedes avanzar con más seguridad</h3>
+          <p>
+            En esta capacitación aprenderás a prepararte mejor, reducir errores
+            y actuar con más confianza en cada etapa.
+          </p>
+        </div>
+
+        <div class="impact-card">
+          <h3>Tu caso merece organización, estrategia y preparación</h3>
+          <p>
+            HermanoHispano te acompaña con contenido práctico pensado para la
+            comunidad latina.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="beneficios">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow dark">¿Qué obtendrás?</span>
+          <h2>Una capacitación diseñada para ayudarte a avanzar con claridad</h2>
+          <p>
+            Información útil, estructura práctica y herramientas para prepararte
+            mejor en temas migratorios.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3>Checklist de documentos</h3>
+            <p>
+              Aprende a reunir evidencia, identificar documentos clave y
+              presentar tu información con orden.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🛂</div>
+            <h3>Entendimiento del proceso</h3>
+            <p>
+              Conoce las etapas más comunes de trámites migratorios y qué esperar
+              en cada una.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🎤</div>
+            <h3>Preparación para entrevistas</h3>
+            <p>
+              Revisa recomendaciones prácticas para presentarte con más seguridad
+              y evitar errores frecuentes.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">⚖️</div>
+            <h3>Errores comunes que debes evitar</h3>
+            <p>
+              Detecta fallas frecuentes en formularios, tiempos, evidencia y
+              comunicación.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3>Enfoque humano y comunitario</h3>
+            <p>
+              Todo el contenido está pensado para la comunidad hispana, con
+              lenguaje claro y cercano.
+            </p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Material complementario</h3>
+            <p>
+              Acceso a recursos descargables, recordatorios y recomendaciones
+              posteriores al evento.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-section" id="temas">
+      <div class="container split-grid">
+        <div class="split-visual">
+          <div class="visual-card large">
+            <div class="visual-badge">Guía práctica</div>
+            <h3>Prepárate con orden y estrategia</h3>
+            <p>
+              Desde la recolección de evidencia hasta la preparación personal
+              para cada paso del proceso.
+            </p>
+          </div>
+
+          <div class="mini-cards">
+            <div class="mini-card">
+              <strong>Documentos</strong>
+              <span>Qué tener listo</span>
+            </div>
+            <div class="mini-card">
+              <strong>Entrevistas</strong>
+              <span>Cómo prepararte</span>
+            </div>
+            <div class="mini-card">
+              <strong>Fechas</strong>
+              <span>Qué no dejar pasar</span>
+            </div>
+            <div class="mini-card">
+              <strong>Apoyo</strong>
+              <span>Recursos útiles</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="split-copy">
+          <span class="eyebrow dark">Lo más importante</span>
+          <h2>No necesitas más confusión. Necesitas una ruta clara.</h2>
+          <p>
+            Esta capacitación no busca abrumarte con términos técnicos ni darte
+            información desordenada. Nuestro objetivo es ayudarte a comprender
+            mejor tus opciones, organizar tu proceso y sentirte más preparado.
+          </p>
+
+          <ul class="check-list">
+            <li>Explicaciones simples y directas</li>
+            <li>Ejemplos prácticos para la comunidad hispana</li>
+            <li>Recomendaciones para mejorar tu preparación</li>
+            <li>Pasos concretos que puedes aplicar inmediatamente</li>
+          </ul>
+
+          <a href="#registro" class="btn btn-primary">Apartar mi cupo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="speakers" id="ponentes">
+      <div class="container">
+        <div class="section-heading center light">
+          <span class="eyebrow">Capacitación liderada por</span>
+          <h2>Un equipo enfocado en informar, orientar y servir</h2>
+          <p>
+            Puedes reemplazar estos nombres por tus ponentes reales cuando quieras.
+          </p>
+        </div>
+
+        <div class="speaker-grid">
+          <article class="speaker-card">
+            <div class="speaker-photo gradient-1"></div>
+            <h3>Ana Martínez</h3>
+            <p class="speaker-role">Especialista en orientación migratoria</p>
+            <p>
+              Enfocada en preparación de expedientes, organización documental y
+              orientación para familias migrantes.
+            </p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo gradient-2"></div>
+            <h3>Carlos Herrera</h3>
+            <p class="speaker-role">Facilitador comunitario</p>
+            <p>
+              Trabaja en acompañamiento informativo, talleres y educación para la
+              comunidad hispana.
+            </p>
+          </article>
+
+          <article class="speaker-card">
+            <div class="speaker-photo gradient-3"></div>
+            <h3>Lucía Gómez</h3>
+            <p class="speaker-role">Coordinadora de capacitación</p>
+            <p>
+              Diseña sesiones prácticas para ayudar a los asistentes a prepararse
+              mejor ante procesos complejos.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="agenda" id="agenda">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow dark">Agenda del evento</span>
+          <h2>Así se desarrollará la capacitación</h2>
+          <p>Tres sesiones para darte una visión clara, útil y accionable.</p>
+        </div>
+
+        <div class="agenda-grid">
+          <article class="agenda-card">
+            <span class="day-tag">Día 1</span>
+            <h3>Fundamentos del proceso migratorio</h3>
+            <ul>
+              <li>Panorama general de procesos comunes</li>
+              <li>Cómo organizar documentos personales</li>
+              <li>Errores iniciales que debes evitar</li>
+              <li>Preparación básica del caso</li>
+            </ul>
+          </article>
+
+          <article class="agenda-card featured">
+            <span class="day-tag">Día 2</span>
+            <h3>Documentación, evidencia y entrevistas</h3>
+            <ul>
+              <li>Qué evidencia suele ser importante</li>
+              <li>Cómo presentar información con orden</li>
+              <li>Recomendaciones para entrevistas</li>
+              <li>Buenas prácticas de seguimiento</li>
+            </ul>
+          </article>
+
+          <article class="agenda-card">
+            <span class="day-tag">Día 3</span>
+            <h3>Plan de acción y próximos pasos</h3>
+            <ul>
+              <li>Cómo continuar después del taller</li>
+              <li>Checklist final de preparación</li>
+              <li>Recursos de apoyo para la comunidad</li>
+              <li>Preguntas frecuentes y cierre</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="eyebrow dark">Testimonios</span>
+          <h2>Mensajes que puedes reemplazar por testimonios reales</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p>
+              “Pensaba que todo era demasiado complicado, pero aquí entendí cómo
+              organizar mis documentos y qué pasos priorizar.”
+            </p>
+            <h4>María R.</h4>
+          </article>
+
+          <article class="testimonial-card">
+            <p>
+              “La explicación fue clara, humana y fácil de seguir. Me dio mucha
+              más confianza para continuar mi proceso.”
+            </p>
+            <h4>José A.</h4>
+          </article>
+
+          <article class="testimonial-card">
+            <p>
+              “Lo que más me gustó fue que hablaron en español, sin palabras
+              complicadas, y con ejemplos reales.”
+            </p>
+            <h4>Daniela C.</h4>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <div class="container cta-final-box">
+        <div>
+          <span class="eyebrow">Reserva tu lugar hoy</span>
+          <h2>Capacítate con HermanoHispano y prepárate con más seguridad</h2>
+          <p>
+            Regístrate ahora y recibe acceso al evento, recordatorios y recursos
+            complementarios.
+          </p>
+        </div>
+
+        <a href="#registro" class="btn btn-primary">Quiero mi cupo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <a href="#" class="logo footer-logo">
+          <span class="logo-mark">HH</span>
+          <span>HermanoHispano</span>
+        </a>
+        <p class="footer-text">
+          Capacitación e información para la comunidad hispana.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
